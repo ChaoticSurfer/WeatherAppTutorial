@@ -13,10 +13,7 @@ builder.Services.AddScoped<WeatherService>();
 builder.Services.Configure<OpenWeatherConfig>(builder.Configuration.GetSection("OpenWeatherConfig"));
 
 
-builder.Services.AddHttpClient("OpenWeather", client =>
-{
-    client.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/");
-});
+builder.Services.AddHttpClient();
 
 
 var app = builder.Build();

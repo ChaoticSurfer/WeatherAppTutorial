@@ -15,9 +15,7 @@ namespace WeatherAppTutorial.Services
 
         public async Task<string> GetWeatherDataAsync(double latitude, double longitude)
         {
-         //   var client = _clientFactory.CreateClient("OpenWeather");
             var client = _clientFactory.CreateClient();
-            // var response = await client.GetAsync($"weather?lat={latitude}&lon={longitude}&appid={_apiKey}");
             var response = await client.GetAsync($"https://api.openweathermap.org/data/2.5/weather?lat={latitude}&lon={longitude}&appid={_apiKey}");
 
             //    response.EnsureSuccessStatusCode();
